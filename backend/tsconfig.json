@@ -17,7 +17,8 @@
     "outDir": "dist",
     "paths": {
       "@app/*": ["src/*"]
-    }
+    },
+    "jsx": "react-jsx"
   },
   "include": ["**/*.ts", "**/*.js", "**/*.tsx"],
   "exclude": ["node_modules"]
