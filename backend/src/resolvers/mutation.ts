@@ -3,6 +3,7 @@ import { MutationResolvers } from "@app/__generated__/resolvers-types";
 // Use the generated `MutationResolvers` type to type check our mutations!
 const Mutation: MutationResolvers = {
   addBook: async (_, { input }, { prisma }) => {
+    console.log("add book...", input);
     await prisma.book.create({
       data: {
         title: input.title,
