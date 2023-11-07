@@ -1,6 +1,7 @@
 overwrite: true
 # This configuration file tells GraphQL Code Generator how to generate types based on our schema.
 schema: "./schema.graphql"
+documents: "./frontend/client/gql/***/*.graphql"
 generates:
   # Specify where our generated types should live.
   ./src/__generated__/resolvers-types.ts:
@@ -14,3 +15,15 @@ generates:
       # This file path starts from the location of the file where you generate
       # types (i.e., `/src/__generated__/resolvers-types.ts` above)
       contextType: "./context#MyContext"
+
+  ./frontend/client/__client_generated__/apollo-hooks/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config: withHooks:true
+      withComponents:false
+
+  ./frontend/client/__client_generated__/types/index.d.ts:
+    plugins:
+      - "typescript"
