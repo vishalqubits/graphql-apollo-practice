@@ -3,17 +3,21 @@ type Query {
 }
 
 type Book {
+  id: Int
   title: String
   author: String
 }
 
 type AddBookMutationResponse {
-  code: String!
   success: Boolean!
   message: String!
-  book: Book
+}
+
+input AddBookInput {
+  title: String!
+  author: String!
 }
 
 type Mutation {
-  addBook(title: String, author: String): AddBookMutationResponse
+  addBook(input: AddBookInput!): AddBookMutationResponse!
 }

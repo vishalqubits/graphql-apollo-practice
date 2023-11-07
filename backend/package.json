@@ -1,17 +1,20 @@
 {
-  "type": "module",
+  "type": "commonjs",
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "tsc",
-    "dev": "tsc && nodemon ./dist/index.js  ",
+    "dev": "rm -rf ./dist && tsc && node ./dist/src/index.js",
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@apollo/server": "^4.9.5",
-    "graphql": "^16.8.1"
+    "@prisma/client": "^5.5.2",
+    "graphql": "^16.8.1",
+    "mysql": "^2.18.1",
+    "prisma": "^5.5.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",

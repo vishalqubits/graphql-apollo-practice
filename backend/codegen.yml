@@ -1,3 +1,4 @@
+overwrite: true
 # This configuration file tells GraphQL Code Generator how to generate types based on our schema.
 schema: "./schema.graphql"
 generates:
@@ -12,4 +13,4 @@ generates:
       # all of our resolvers.
       # This file path starts from the location of the file where you generate
       # types (i.e., `/src/__generated__/resolvers-types.ts` above)
-      contextType: "../index#MyContext"
+      contextType: "./context#MyContext"
